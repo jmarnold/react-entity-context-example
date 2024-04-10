@@ -1,4 +1,5 @@
-import { EntityCommand } from "./SolutionContext";
+
+import { EntityCommand } from "./EntityContext";
 import { SolutionViewModel } from "./SolutionTypes";
 
 export declare type SaveSolutionParams = {

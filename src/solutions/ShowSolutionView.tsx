@@ -1,11 +1,10 @@
-import { SolutionProvider, useSolution, useSolutionDispatcher } from "./SolutionContext";
+import { SolutionProvider, useSolution } from "./SolutionContext";
 import logo from "../logo.svg";
 import { saveSolution } from "./SolutionCommands";
 
 export const ShowSolutionShell: React.FC = () => {
   // Could easily expose a refresh here
-  const { current, loading } = useSolution();
-  const dispatcher = useSolutionDispatcher();
+  const { current, dispatcher, loading, refresh } = useSolution();
 
   const clickHandler = async () => {
     await dispatcher.dispatch(saveSolution({
@@ -23,7 +22,8 @@ export const ShowSolutionShell: React.FC = () => {
             <h3>
               {current?.title} (Solution {current?.id})
             </h3>
-            <button onClick={clickHandler}>Modify</button>
+            <button onClick={clickHandler}>Modify</button><br/>
+            <button onClick={refresh}>Refresh</button>
           </>
         )}
       </header>
