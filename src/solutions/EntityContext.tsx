@@ -16,7 +16,6 @@ export  declare type EntityContext<T> = {
   current?: T;
   dispatcher: EntityDispatcher<T>;
   refresh: () => Promise<void>;
-  // modify: (transform: EntityCommand<T>) => Promise<void>;
 };
 
 
